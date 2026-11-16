@@ -1,0 +1,122 @@
+{
+ "spec": "docs/AEP-SPEC.md section 7",
+ "canonical": [
+  {
+   "name": "rfc8785-numbers",
+   "input": [
+    333333333.3333333,
+    1e+30,
+    4.5,
+    0.002,
+    1e-27,
+    -0.0,
+    1.0,
+    9007199254740991
+   ],
+   "canonical": "[333333333.3333333,1e+30,4.5,0.002,1e-27,0,1,9007199254740991]"
+  },
+  {
+   "name": "rfc8785-sorting",
+   "input": {
+    "€": "Euro Sign",
+    "\r": "Carriage Return",
+    "דּ": "Hebrew Letter Dalet With Dagesh",
+    "1": "One",
+    "😀": "Emoji: Grinning Face",
+    "": "Control",
+    "ö": "Latin Small Letter O With Diaeresis"
+   },
+   "canonical": "{\"\\r\":\"Carriage Return\",\"1\":\"One\",\"\":\"Control\",\"ö\":\"Latin Small Letter O With Diaeresis\",\"€\":\"Euro Sign\",\"😀\":\"Emoji: Grinning Face\",\"דּ\":\"Hebrew Letter Dalet With Dagesh\"}"
+  },
+  {
+   "name": "rfc8785-escapes",
+   "input": {
+    "string": "€$\u000f\nA'B\"\\\\\"/"
+   },
+   "canonical": "{\"string\":\"€$\\u000f\\nA'B\\\"\\\\\\\\\\\"/\"}"
+  },
+  {
+   "name": "nested",
+   "input": [
+    56,
+    {
+     "d": true,
+     "10": null,
+     "1": []
+    }
+   ],
+   "canonical": "[56,{\"1\":[],\"10\":null,\"d\":true}]"
+  }
+ ],
+ "commit_hash": [
+  {
+   "scope": "device:10.255.9.1",
+   "parent": null,
+   "branch": "main",
+   "plan": {
+    "steps": [
+     {
+      "operation": "queue_set_max_limit",
+      "item": "*1A",
+      "sets": {
+       "max-limit": "50M/50M"
+      }
+     }
+    ],
+    "risk": {
+     "class": "low"
+    },
+    "reversibility": "R1",
+    "weight": 1.0
+   },
+   "canonical": "{\"branch\":\"main\",\"parent\":null,\"plan\":{\"reversibility\":\"R1\",\"risk\":{\"class\":\"low\"},\"steps\":[{\"item\":\"*1A\",\"operation\":\"queue_set_max_limit\",\"sets\":{\"max-limit\":\"50M/50M\"}}],\"weight\":1},\"scope\":\"device:10.255.9.1\"}",
+   "commit_hash": "3c3997d312515fc26298bebf0fc820763c6a06356f950983f7badc4aaee10e51"
+  },
+  {
+   "scope": "device:10.255.9.1",
+   "parent": "6f1c2a7e-0000-4000-8000-000000000001",
+   "branch": "main",
+   "plan": {
+    "steps": [
+     {
+      "operation": "queue_set_max_limit",
+      "item": "*1A",
+      "sets": {
+       "max-limit": "50M/50M"
+      }
+     }
+    ],
+    "risk": {
+     "class": "low"
+    },
+    "reversibility": "R1",
+    "weight": 1.0
+   },
+   "canonical": "{\"branch\":\"main\",\"parent\":\"6f1c2a7e-0000-4000-8000-000000000001\",\"plan\":{\"reversibility\":\"R1\",\"risk\":{\"class\":\"low\"},\"steps\":[{\"item\":\"*1A\",\"operation\":\"queue_set_max_limit\",\"sets\":{\"max-limit\":\"50M/50M\"}}],\"weight\":1},\"scope\":\"device:10.255.9.1\"}",
+   "commit_hash": "3090034f0584e36d030cb6862205c6c003e1fd29946d7ee7126cb76beb9fc6d3"
+  },
+  {
+   "scope": "cloud:shop-mail",
+   "parent": null,
+   "branch": "main",
+   "plan": {
+    "steps": [
+     {
+      "operation": "queue_set_max_limit",
+      "item": "*1A",
+      "sets": {
+       "max-limit": "50M/50M"
+      }
+     }
+    ],
+    "risk": {
+     "class": "low"
+    },
+    "reversibility": "R1",
+    "weight": 1.0
+   },
+   "canonical": "{\"branch\":\"main\",\"parent\":null,\"plan\":{\"reversibility\":\"R1\",\"risk\":{\"class\":\"low\"},\"steps\":[{\"item\":\"*1A\",\"operation\":\"queue_set_max_limit\",\"sets\":{\"max-limit\":\"50M/50M\"}}],\"weight\":1},\"scope\":\"cloud:shop-mail\"}",
+   "commit_hash": "ec6196f7ae203418aa57b4a447ce94cdddc69511dcd628f6069776b02abfb71d"
+  }
+ ]
+}
